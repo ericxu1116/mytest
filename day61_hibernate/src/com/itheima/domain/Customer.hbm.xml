@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<!-- 参考hibernate-core.jar里面的hibernate-mapping-3.0.dtd -->    
+<hibernate-mapping>
+	
+	<!--
+		class: 映射类 
+			name:类名
+			table: 表名
+		id: 映射表的主键属性
+			name：属性名称（name名称代表的类里面的getter和setter方法名称，而并不是类的私有成员）
+			column:表的字段名称
+		generator:主键维护策略
+		property:映射表的普通属性
+		    name：属性名称（name名称代表的类里面的getter和setter方法名称，而并不是类的私有成员）
+			column:表的字段名称   	
+	-->
+	<class name="com.itheima.domain.Customer" table="cst_customer">
+		<id name="id" column="cust_id">
+			<!-- native：利用数据库的增长能力 -->
+			<generator class="native"></generator>
+		</id>
+		<property name="custName" column="cust_name"></property>
+		<property name="custSource" column="cust_source"></property>
+		<property name="custIndustry" column="cust_industry"></property>
+		<property name="custLevel" column="cust_level"></property>
+		<property name="custAddress" column="cust_address"></property>
+		<property name="custPhone" column="cust_phone"></property>
+		<property name="custZipCode" column="cust_zipcode"></property>
+		
+	</class>
+	
+</hibernate-mapping>
+
+
+
